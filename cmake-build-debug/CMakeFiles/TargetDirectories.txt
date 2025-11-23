@@ -1,0 +1,3 @@
+/Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/CMakeFiles/Notebook.dir
+/Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/CMakeFiles/rebuild_cache.dir
