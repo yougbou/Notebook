@@ -25,17 +25,6 @@ bool Collection::RemoveNote(const std::string &title) {
     return false;
 }
 
-void Collection::LockNote(const std::string &title) {
-    for (auto it = notes.begin(); it != notes.end(); ++it ){
-        if( (*it)->GetTitle() == title){
-            if(!(*it)->IsLocked())
-                (*it)->Lock();
-            else (*it)->Unlock();
-            std::cout << "note locked : " << (*it)->GetTitle() <<std::endl;
-            break;
-        }
-    }
-}
 
 std::shared_ptr<Note> Collection::GetNote(const std::string &title) {
     for (const auto& note : notes)

@@ -1,10 +1,9 @@
 //
-// Created by gbouri youssef  on 23/11/25.
+// Created by gbouri youssef  on 22/10/25.
 //
 
-#ifndef NOTEBOOK_COLLECTION_H
-#define NOTEBOOK_COLLECTION_H
-
+#ifndef NOTEAPP_COLLECTION_H
+#define NOTEAPP_COLLECTION_H
 
 #include <vector>
 #include <string>
@@ -13,7 +12,6 @@
 #include <iostream>
 #include "Note.h"
 #include "Observer.h"
-
 
 class Collection {
 private:
@@ -24,9 +22,13 @@ private:
 public:
     explicit Collection(const std::string& n) : name(n) {}
 
+    //deep copy
+    Collection& operator=(const Collection& other);
+
+    ~Collection() = default;
+
     void AddNote(std::shared_ptr<Note> note);
     bool RemoveNote(const std::string& title);
-    void LockNote(const std::string& title);
     std::shared_ptr<Note> GetNote(const std::string& title);
 
     const std::vector<std::shared_ptr<Note>>& GetNotes() const {
@@ -46,9 +48,8 @@ public:
 private:
     void Notify() {
         for (auto obs : observers)
-            obs->Update(static_cast<int>(notes.size())); // .size() return a size type
+            obs->Update(static_cast<int>(notes.size()));
     }
 };
 
-
-#endif //NOTEBOOK_COLLECTION_H
+#endif //NOTEAPP_COLLECTION_H
