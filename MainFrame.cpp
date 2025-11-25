@@ -9,6 +9,20 @@ MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition
                          observerMain("Default"), observerImportant("Important")
 {
 
+
+    //loading mechanism
+    StorageManager::Load(collections, "notes.json");
+
+    // extract special collections (Default, Important)
+    for (auto& coll : collections) {
+        if (coll.GetName() == "Default") {
+            mainCollection = coll;
+        }
+        else if (coll.GetName() == "Important") {
+            importantCollection = coll;
+        }
+    }
+
     wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
 
     //Combo Box
@@ -62,6 +76,7 @@ MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition
     Bind(wxEVT_BUTTON, &MainFrame::OnDeleteNote, this, deleteButton->GetId());
     Bind(wxEVT_BUTTON, &MainFrame::OnLockNote, this, lockButton->GetId());
     Bind(wxEVT_BUTTON, &MainFrame::OnImportantNote, this, importantButton->GetId());
+    Bind(wxEVT_CLOSE_WINDOW, &MainFrame::OnClose, this);
 
     noteList->Bind(wxEVT_LISTBOX, &MainFrame::OnSelectedNote, this);
     collectionCombo->Bind(wxEVT_COMBOBOX, &MainFrame::OnCollectionSelected, this);
@@ -238,5 +253,20 @@ void MainFrame::UpdateNoteList(const std::string &collectionName) {
     }
 }
 
+void MainFrame::OnClose(wxCloseEvent& event)
+{
+    //Combine all collection to one vector
+    std::vector<Collection> allCollections;
+
+    allCollections.push_back(mainCollection);
+    allCollections.push_back(importantCollection);
+
+    for (auto& c : collections)
+        allCollections.push_back(c);
+
+    StorageManager::Save(allCollections, "notes.json");
+
+    event.Skip();
+}
 
 

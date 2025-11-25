@@ -10,7 +10,9 @@ add_executable(Notebook main.cpp
         Collection.cpp
         Collection.h
         MainFrame.cpp
-        MainFrame.h)
+        MainFrame.h
+        StorageManager.cpp
+        StorageManager.h)
 
 
 # Find wxWidgets

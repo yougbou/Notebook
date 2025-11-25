@@ -9,6 +9,7 @@
 #include <wx/wx.h>
 #include "Collection.h"
 #include "CollectionObserver.h"
+#include "StorageManager.h"
 
 
 class MainFrame : public wxFrame {
@@ -34,7 +35,7 @@ private:
 public:
     MainFrame();
 
-
+    void OnClose(wxCloseEvent& event);
     void OnAddNote(wxCommandEvent&);
     void OnDeleteNote(wxCommandEvent&);
     void OnLockNote(wxCommandEvent&);
@@ -43,6 +44,7 @@ public:
     void OnCollectionSelected(wxCommandEvent&);
 
     void UpdateNoteList(const std::string& collectionName);
+
 };
 
 

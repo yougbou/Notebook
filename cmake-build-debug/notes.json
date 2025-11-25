@@ -1,0 +1,88 @@
+{
+    "collections": [
+        {
+            "name": "Default",
+            "notes": []
+        },
+        {
+            "name": "Important",
+            "notes": [
+                {
+                    "locked": false,
+                    "text": "text3",
+                    "title": "note3"
+                }
+            ]
+        },
+        {
+            "name": "Default",
+            "notes": [
+                {
+                    "locked": true,
+                    "text": "text2",
+                    "title": "note2"
+                }
+            ]
+        },
+        {
+            "name": "Important",
+            "notes": [
+                {
+                    "locked": false,
+                    "text": "text3",
+                    "title": "note3"
+                }
+            ]
+        },
+        {
+            "name": "Default",
+            "notes": [
+                {
+                    "locked": false,
+                    "text": "text1",
+                    "title": "note1"
+                },
+                {
+                    "locked": false,
+                    "text": "text2",
+                    "title": "note2"
+                }
+            ]
+        },
+        {
+            "name": "Important",
+            "notes": [
+                {
+                    "locked": false,
+                    "text": "text3",
+                    "title": "note3"
+                }
+            ]
+        },
+        {
+            "name": "Default",
+            "notes": [
+                {
+                    "locked": false,
+                    "text": "text1",
+                    "title": "note1"
+                },
+                {
+                    "locked": false,
+                    "text": "text2",
+                    "title": "note2"
+                }
+            ]
+        },
+        {
+            "name": "Important",
+            "notes": [
+                {
+                    "locked": false,
+                    "text": "text3",
+                    "title": "note3"
+                }
+            ]
+        }
+    ]
+}

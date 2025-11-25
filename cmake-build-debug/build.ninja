@@ -73,6 +73,14 @@ build CMakeFiles/Notebook.dir/MainFrame.cpp.o: CXX_COMPILER__Notebook_unscanned_
   OBJECT_DIR = CMakeFiles/Notebook.dir
   OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
 
+build CMakeFiles/Notebook.dir/StorageManager.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/StorageManager.cpp || cmake_object_order_depends_target_Notebook
+  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
+  DEP_FILE = CMakeFiles/Notebook.dir/StorageManager.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
+  INCLUDES = -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
+  OBJECT_DIR = CMakeFiles/Notebook.dir
+  OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Notebook
@@ -81,7 +89,7 @@ build CMakeFiles/Notebook.dir/MainFrame.cpp.o: CXX_COMPILER__Notebook_unscanned_
 #############################################
 # Link the executable Notebook
 
-build Notebook: CXX_EXECUTABLE_LINKER__Notebook_Debug CMakeFiles/Notebook.dir/main.cpp.o CMakeFiles/Notebook.dir/Collection.cpp.o CMakeFiles/Notebook.dir/MainFrame.cpp.o
+build Notebook: CXX_EXECUTABLE_LINKER__Notebook_Debug CMakeFiles/Notebook.dir/main.cpp.o CMakeFiles/Notebook.dir/Collection.cpp.o CMakeFiles/Notebook.dir/MainFrame.cpp.o CMakeFiles/Notebook.dir/StorageManager.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7
   LINK_LIBRARIES = -L/usr/local/lib  -framework IOKit  -framework Carbon  -framework Cocoa  -framework QuartzCore  -framework AudioToolbox  -framework System  -framework OpenGL  -lwx_osx_cocoau_core-3.2  -lwx_baseu-3.2
   OBJECT_DIR = CMakeFiles/Notebook.dir
