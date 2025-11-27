@@ -1,3 +1,7 @@
+/Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/CMakeFiles/notebook_lib.dir
 /Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/CMakeFiles/Notebook.dir
 /Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/test/CMakeFiles/runAllTests.dir
+/Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/test/CMakeFiles/edit_cache.dir
+/Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir

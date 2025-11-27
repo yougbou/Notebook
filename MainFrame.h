@@ -14,8 +14,8 @@
 
 class MainFrame : public wxFrame {
 private:
-    Collection mainCollection;
-    Collection importantCollection;
+    Collection *mainCollection;
+    Collection *importantCollection;
     std::vector<Collection> collections;
     CollectionObserver observerMain;
     CollectionObserver observerImportant;

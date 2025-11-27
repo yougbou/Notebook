@@ -41,43 +41,69 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target notebook_lib
+
+
+#############################################
+# Order-only phony target for notebook_lib
+
+build cmake_object_order_depends_target_notebook_lib: phony || CMakeFiles/notebook_lib.dir
+
+build CMakeFiles/notebook_lib.dir/Collection.cpp.o: CXX_COMPILER__notebook_lib_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/Collection.cpp || cmake_object_order_depends_target_notebook_lib
+  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
+  DEP_FILE = CMakeFiles/notebook_lib.dir/Collection.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
+  INCLUDES = -I/Users/gbouriyoussef/CLionProjects/Notebook -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
+  OBJECT_DIR = CMakeFiles/notebook_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles/notebook_lib.dir
+
+build CMakeFiles/notebook_lib.dir/MainFrame.cpp.o: CXX_COMPILER__notebook_lib_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/MainFrame.cpp || cmake_object_order_depends_target_notebook_lib
+  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
+  DEP_FILE = CMakeFiles/notebook_lib.dir/MainFrame.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
+  INCLUDES = -I/Users/gbouriyoussef/CLionProjects/Notebook -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
+  OBJECT_DIR = CMakeFiles/notebook_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles/notebook_lib.dir
+
+build CMakeFiles/notebook_lib.dir/StorageManager.cpp.o: CXX_COMPILER__notebook_lib_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/StorageManager.cpp || cmake_object_order_depends_target_notebook_lib
+  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
+  DEP_FILE = CMakeFiles/notebook_lib.dir/StorageManager.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
+  INCLUDES = -I/Users/gbouriyoussef/CLionProjects/Notebook -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
+  OBJECT_DIR = CMakeFiles/notebook_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles/notebook_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target notebook_lib
+
+
+#############################################
+# Link the static library libnotebook_lib.a
+
+build libnotebook_lib.a: CXX_STATIC_LIBRARY_LINKER__notebook_lib_Debug CMakeFiles/notebook_lib.dir/Collection.cpp.o CMakeFiles/notebook_lib.dir/MainFrame.cpp.o CMakeFiles/notebook_lib.dir/StorageManager.cpp.o
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/notebook_lib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libnotebook_lib.a
+  TARGET_PDB = notebook_lib.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target Notebook
 
 
 #############################################
 # Order-only phony target for Notebook
 
-build cmake_object_order_depends_target_Notebook: phony || CMakeFiles/Notebook.dir
+build cmake_object_order_depends_target_Notebook: phony || cmake_object_order_depends_target_notebook_lib
 
 build CMakeFiles/Notebook.dir/main.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/main.cpp || cmake_object_order_depends_target_Notebook
   DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
   DEP_FILE = CMakeFiles/Notebook.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
-  INCLUDES = -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
-  OBJECT_DIR = CMakeFiles/Notebook.dir
-  OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
-
-build CMakeFiles/Notebook.dir/Collection.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/Collection.cpp || cmake_object_order_depends_target_Notebook
-  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
-  DEP_FILE = CMakeFiles/Notebook.dir/Collection.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
-  INCLUDES = -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
-  OBJECT_DIR = CMakeFiles/Notebook.dir
-  OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
-
-build CMakeFiles/Notebook.dir/MainFrame.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/MainFrame.cpp || cmake_object_order_depends_target_Notebook
-  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
-  DEP_FILE = CMakeFiles/Notebook.dir/MainFrame.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
-  INCLUDES = -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
-  OBJECT_DIR = CMakeFiles/Notebook.dir
-  OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
-
-build CMakeFiles/Notebook.dir/StorageManager.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/StorageManager.cpp || cmake_object_order_depends_target_Notebook
-  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
-  DEP_FILE = CMakeFiles/Notebook.dir/StorageManager.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
-  INCLUDES = -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
+  INCLUDES = -I/Users/gbouriyoussef/CLionProjects/Notebook -isystem /usr/local/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /usr/local/include/wx-3.2
   OBJECT_DIR = CMakeFiles/Notebook.dir
   OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
 
@@ -89,9 +115,9 @@ build CMakeFiles/Notebook.dir/StorageManager.cpp.o: CXX_COMPILER__Notebook_unsca
 #############################################
 # Link the executable Notebook
 
-build Notebook: CXX_EXECUTABLE_LINKER__Notebook_Debug CMakeFiles/Notebook.dir/main.cpp.o CMakeFiles/Notebook.dir/Collection.cpp.o CMakeFiles/Notebook.dir/MainFrame.cpp.o CMakeFiles/Notebook.dir/StorageManager.cpp.o
+build Notebook: CXX_EXECUTABLE_LINKER__Notebook_Debug CMakeFiles/Notebook.dir/main.cpp.o | libnotebook_lib.a || libnotebook_lib.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7
-  LINK_LIBRARIES = -L/usr/local/lib  -framework IOKit  -framework Carbon  -framework Cocoa  -framework QuartzCore  -framework AudioToolbox  -framework System  -framework OpenGL  -lwx_osx_cocoau_core-3.2  -lwx_baseu-3.2
+  LINK_LIBRARIES = libnotebook_lib.a  -L/usr/local/lib  -framework IOKit  -framework Carbon  -framework Cocoa  -framework QuartzCore  -framework AudioToolbox  -framework System  -framework OpenGL  -lwx_osx_cocoau_core-3.2  -lwx_baseu-3.2
   OBJECT_DIR = CMakeFiles/Notebook.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -122,7 +148,72 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/gbouriyoussef/CLionProjects/Notebook/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target runAllTests
+
+
+#############################################
+# Order-only phony target for runAllTests
+
+build cmake_object_order_depends_target_runAllTests: phony || cmake_object_order_depends_target_notebook_lib
+
+build test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o: CXX_COMPILER__runAllTests_unscanned_Debug /Users/gbouriyoussef/CLionProjects/Notebook/test/runAllTests.cpp || cmake_object_order_depends_target_runAllTests
+  DEP_FILE = test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics
+  INCLUDES = -I/Users/gbouriyoussef/CLionProjects/Notebook -isystem /usr/local/include
+  OBJECT_DIR = test/CMakeFiles/runAllTests.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/runAllTests.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target runAllTests
+
+
+#############################################
+# Link the executable test/runAllTests
+
+build test/runAllTests: CXX_EXECUTABLE_LINKER__runAllTests_Debug test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o | /usr/local/lib/libgtest.a /usr/local/lib/libgtest_main.a libnotebook_lib.a /usr/local/lib/libgtest.a || libnotebook_lib.a
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7
+  LINK_LIBRARIES = /usr/local/lib/libgtest.a  /usr/local/lib/libgtest_main.a  libnotebook_lib.a  /usr/local/lib/libgtest.a
+  OBJECT_DIR = test/CMakeFiles/runAllTests.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/runAllTests
+  TARGET_PDB = runAllTests.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/gbouriyoussef/CLionProjects/Notebook -B/Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build notebook_lib: phony libnotebook_lib.a
+
+build runAllTests: phony test/runAllTests
 
 # =============================================================================
 # Folder targets.
@@ -132,7 +223,14 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug
 
-build all: phony Notebook
+build all: phony libnotebook_lib.a Notebook test/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/gbouriyoussef/CLionProjects/Notebook/cmake-build-debug/test
+
+build test/all: phony test/runAllTests
 
 # =============================================================================
 # Built-in targets
@@ -141,14 +239,14 @@ build all: phony Notebook
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindwxWidgets.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/UsewxWidgets.cmake /Users/gbouriyoussef/CLionProjects/Notebook/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindGTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindwxWidgets.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/GoogleTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/UsewxWidgets.cmake /Users/gbouriyoussef/CLionProjects/Notebook/CMakeLists.txt /Users/gbouriyoussef/CLionProjects/Notebook/test/CMakeLists.txt /usr/local/lib/cmake/GTest/GTestConfig.cmake /usr/local/lib/cmake/GTest/GTestConfigVersion.cmake /usr/local/lib/cmake/GTest/GTestTargets-release.cmake /usr/local/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindwxWidgets.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/UsewxWidgets.cmake /Users/gbouriyoussef/CLionProjects/Notebook/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindGTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindwxWidgets.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/GoogleTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/UsewxWidgets.cmake /Users/gbouriyoussef/CLionProjects/Notebook/CMakeLists.txt /Users/gbouriyoussef/CLionProjects/Notebook/test/CMakeLists.txt /usr/local/lib/cmake/GTest/GTestConfig.cmake /usr/local/lib/cmake/GTest/GTestConfigVersion.cmake /usr/local/lib/cmake/GTest/GTestTargets-release.cmake /usr/local/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
 
 
 #############################################

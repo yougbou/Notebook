@@ -5,6 +5,7 @@
 #include "StorageManager.h"
 #include <fstream>
 #include <vector>
+#include <map>
 
 using json = nlohmann::json;
 
@@ -35,7 +36,10 @@ void StorageManager::Save(const std::vector<Collection>& collections,
     json root;
     root["collections"] = json::array();
 
+
+
     for (const auto& coll : collections) {
+
         json jcoll;
         jcoll["name"] = coll.GetName();
         jcoll["notes"] = json::array();
@@ -50,7 +54,6 @@ void StorageManager::Save(const std::vector<Collection>& collections,
             jnote["text"] = note.GetText();
             jnote["locked"] = note.IsLocked();
 
-            // We omit collectionName as it's redundant (it's the parent key)
             jcoll["notes"].push_back(jnote);
         }
 

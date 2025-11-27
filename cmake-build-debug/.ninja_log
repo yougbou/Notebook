@@ -1,11 +1,16 @@
 # ninja log v5
-14	2832	1763933467820200132	CMakeFiles/Notebook.dir/MainFrame.cpp.o	2ae7fa29b4f74e58
-5	2642	1763932916814439133	CMakeFiles/Notebook.dir/main.cpp.o	4727675080eda396
-1	861	1763930956814008158	CMakeFiles/Notebook.dir/Collection.cpp.o	e723f9f37a29ab0
-2832	3016	1763933468017759320	Notebook	2293bb60a94c7086
-10	1093	1764106886718245323	CMakeFiles/Notebook.dir/Collection.cpp.o	e723f9f37a29ab0
-10	3693	1764106889312233427	CMakeFiles/Notebook.dir/StorageManager.cpp.o	7691c7357281b40e
-9	3856	1764106889469229254	CMakeFiles/Notebook.dir/main.cpp.o	4727675080eda396
-10	4223	1764106889831923369	CMakeFiles/Notebook.dir/MainFrame.cpp.o	2ae7fa29b4f74e58
+9	3915	1764194438211203825	CMakeFiles/Notebook.dir/MainFrame.cpp.o	2ae7fa29b4f74e58
+9	3547	1764194437850106261	CMakeFiles/Notebook.dir/main.cpp.o	4727675080eda396
 9	920	1764106964535612642	CMakeFiles/Notebook.dir/Collection.cpp.o	e723f9f37a29ab0
-921	1136	1764106964742007338	Notebook	df16e98271de3f6
+3915	4128	1764194438440286162	Notebook	df16e98271de3f6
+11	3841	1764193756963870349	CMakeFiles/Notebook.dir/StorageManager.cpp.o	7691c7357281b40e
+12	1126	1764282097892491474	CMakeFiles/notebook_lib.dir/Collection.cpp.o	f7a12d36d4bbb3be
+13	3674	1764282100416716196	CMakeFiles/notebook_lib.dir/StorageManager.cpp.o	aef44c6dd2b9d0af
+14	3861	1764282100599931278	CMakeFiles/Notebook.dir/main.cpp.o	ec34cd5b3f7acfec
+13	4277	1764282101024889908	CMakeFiles/notebook_lib.dir/MainFrame.cpp.o	43092d5f243df6a9
+4277	4364	1764282101138718000	libnotebook_lib.a	3a8ebdd372b74658
+4364	4659	1764282101419555542	Notebook	5ced2655d286c1a0
+9	1795	1764282118106156532	test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o	5b9e73cf5422e66c
+1796	1887	1764282118204103546	test/runAllTests	18ee586869691044
+10	1630	1764282304737214240	test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o	5b9e73cf5422e66c
+1630	1712	1764282304825110941	test/runAllTests	18ee586869691044
