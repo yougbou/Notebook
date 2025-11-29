@@ -28,11 +28,17 @@ MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition
     //Combo Box
     wxBoxSizer* comboSizer = new wxBoxSizer(wxHORIZONTAL);
     comboSizer->AddStretchSpacer(1);
-    comboSizer->Add(new wxStaticText(this, wxID_ANY, "Collection:"), 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    comboSizer->Add(new wxStaticText(this, wxID_ANY, "Notes count:"), 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
     collectionCombo = new wxComboBox(this, wxID_ANY);
     collectionCombo->Append("Default");
     collectionCombo->Append("Important");
     collectionCombo->SetSelection(0);
+    countLabel = new wxStaticText(this, wxID_ANY, "0",wxDefaultPosition,wxSize(30, -1),wxALIGN_CENTER | wxBORDER_SIMPLE);
+
+
+    comboSizer->Add(countLabel, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+
+    comboSizer->AddStretchSpacer(1);
 
     comboSizer->Add(collectionCombo, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
     comboSizer->AddStretchSpacer(1);
@@ -82,6 +88,7 @@ MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition
     collectionCombo->Bind(wxEVT_COMBOBOX, &MainFrame::OnCollectionSelected, this);
 
     UpdateNoteList("Default"); // refresh note list
+    countLabel->SetLabel(std::to_string(mainCollection.GetNotes().size()));
     PopulateComboBox();                     // refreshing the comboBox
 }
 void MainFrame::OnAddNote(wxCommandEvent&) {
@@ -234,8 +241,10 @@ void MainFrame::UpdateNoteList(const std::string &collectionName) {
 
     if (collectionName == "Default") {
         const auto& notes = mainCollection.GetNotes();
-        for (const auto& note : notes)
+        for (const auto& note : notes) {
             noteList->Append(note->GetTitle());
+        }
+        countLabel->SetLabel(std::to_string(observerMain.GetNoteCount()));
         return;
     }
 
@@ -243,6 +252,7 @@ void MainFrame::UpdateNoteList(const std::string &collectionName) {
         const auto& notes = importantCollection.GetNotes();
         for (const auto& note : notes)
             noteList->Append(note->GetTitle());
+        countLabel->SetLabel(std::to_string(observerImportant.GetNoteCount()));
         return;
     }
 
@@ -251,6 +261,7 @@ void MainFrame::UpdateNoteList(const std::string &collectionName) {
             const auto& notes = coll.GetNotes();
             for (const auto& note : notes)
                 noteList->Append(note->GetTitle());
+            countLabel->SetLabel(std::to_string(coll.GetNotes().size()));
             break;
         }
     }

@@ -31,6 +31,7 @@ private:
     wxButton* importantButton;
     //Combo Box
     wxComboBox* collectionCombo;
+    wxStaticText* countLabel;
 
 public:
     MainFrame();

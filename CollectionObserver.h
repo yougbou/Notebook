@@ -11,13 +11,19 @@
 class CollectionObserver : public Observer {
 private:
     std::string collectionName;
+    int noteCount;
 
 public:
     explicit CollectionObserver(const std::string& name) : collectionName(name) {}
 
+    int& GetNoteCount() {
+        return noteCount;
+    }
+
     void Update(int noteCount) override {
+        this->noteCount = noteCount;
         std::cout << "Collection [" << collectionName
-                  << "] now has " << noteCount << " notes.\n";
+                  << "] now has " << this->noteCount << " notes.\n";
     }
 };
 
