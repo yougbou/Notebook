@@ -4,10 +4,8 @@
 
 #include "MainFrame.h"
 
-//TODO fix duplicates in json files change mainCollection and importantCollection to pointers
-//Get them back as static object
+//TODO add observer for note counts
 MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition, wxSize(500, 400)),
-                         mainCollection(nullptr), importantCollection(nullptr),
                          observerMain("Default"), observerImportant("Important")
 {
 
@@ -15,26 +13,15 @@ MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition
     //loading mechanism
     StorageManager::Load(collections, "notes.json");
 
-    // extract special collections (Default, Important)
-    for (auto& coll : collections) {
-        if (coll.GetName() == "Default") {
-            mainCollection = &coll;
-        }
-        else if (coll.GetName() == "Important") {
-            importantCollection = &coll;
-        }
+    //for opening the app for the first time
+    if(!ExtractSpecials(collections)){
+        mainCollection.SetName("Default");
+        importantCollection.SetName("Important");
     }
 
-    //first time loading
-     if (!mainCollection) {
-        collections.emplace_back("Default");
-        mainCollection = &collections.back();
-    }
-
-    if (!importantCollection) {
-        collections.emplace_back("Important");
-        importantCollection = &collections.back();
-    }
+    //attach observers
+    mainCollection.Attach(&observerMain);
+    importantCollection.Attach(&observerImportant);
 
     wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -46,7 +33,7 @@ MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition
     collectionCombo->Append("Default");
     collectionCombo->Append("Important");
     collectionCombo->SetSelection(0);
-    //UpdateNoteList("Default");
+
     comboSizer->Add(collectionCombo, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
     comboSizer->AddStretchSpacer(1);
     mainSizer->Add(comboSizer, 0, wxEXPAND | wxALL, 5);
@@ -66,7 +53,7 @@ MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition
     titleSizer->Add(collectionCtrl, 0, wxEXPAND | wxALL, 5);
     mainSizer->Add(titleSizer, 0, wxEXPAND | wxALL, 5);
 
-    // Text area
+    //Text area
     wxBoxSizer* noteSizer = new wxBoxSizer(wxVERTICAL);
     noteSizer->Add(new wxStaticText(this, wxID_ANY, "Note:"), 0, wxALL, 5);
     noteCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE);
@@ -93,6 +80,9 @@ MainFrame::MainFrame() : wxFrame(nullptr, wxID_ANY, "NoteApp", wxDefaultPosition
 
     noteList->Bind(wxEVT_LISTBOX, &MainFrame::OnSelectedNote, this);
     collectionCombo->Bind(wxEVT_COMBOBOX, &MainFrame::OnCollectionSelected, this);
+
+    UpdateNoteList("Default"); // refresh note list
+    PopulateComboBox();                     // refreshing the comboBox
 }
 void MainFrame::OnAddNote(wxCommandEvent&) {
     auto title = titleCtrl->GetValue().ToStdString();
@@ -107,7 +97,7 @@ void MainFrame::OnAddNote(wxCommandEvent&) {
 
     auto note = std::make_shared<Note>(title, text);
     if (collName == "Default") {
-        mainCollection->AddNote(note);
+        mainCollection.AddNote(note);
         UpdateNoteList("Default");
     }
     else {
@@ -145,7 +135,7 @@ void MainFrame::OnDeleteNote(wxCommandEvent &) {
     if (sel == wxNOT_FOUND) return;
 
     std::string title = noteList->GetString(sel).ToStdString();
-    if(mainCollection->RemoveNote(title))
+    if(mainCollection.RemoveNote(title))
         noteList->Delete(sel);
     else wxMessageBox(wxT("Note is locked, Can't delete"),
                       wxT("Warning"), wxICON_WARNING);
@@ -156,14 +146,14 @@ void MainFrame::OnLockNote(wxCommandEvent&){
     if (sel == wxNOT_FOUND) return;
 
     std::string title = noteList->GetString(sel).ToStdString();
-    std::shared_ptr<Note> note = mainCollection->GetNote(title);
+    std::shared_ptr<Note> note = mainCollection.GetNote(title);
 
     if(note->IsLocked()) {
-        mainCollection->GetNote(title)->Unlock();
+        mainCollection.GetNote(title)->Unlock();
         wxMessageBox("Note is unlocked", "Success");
     }
     else {
-        mainCollection->GetNote(title)->Lock();
+        mainCollection.GetNote(title)->Lock();
         wxMessageBox("Note is locked", "Success");
     }
 }
@@ -179,8 +169,8 @@ void MainFrame::OnImportantNote(wxCommandEvent&) {
 
     // find note collection
     if (selectedCollection == "Default") {
-        note = mainCollection->GetNote(title);
-        mainCollection->RemoveNote(title);
+        note = mainCollection.GetNote(title);
+        mainCollection.RemoveNote(title);
         UpdateNoteList("Default");
     }
     else if (selectedCollection == "Important") {
@@ -198,7 +188,7 @@ void MainFrame::OnImportantNote(wxCommandEvent&) {
 
     //add note
     if (note) {
-        importantCollection->AddNote(note);
+        importantCollection.AddNote(note);
         wxMessageBox("Note added to Important Collection!", "Success");
     }
 }
@@ -214,9 +204,9 @@ void MainFrame::OnSelectedNote(wxCommandEvent&) {
 
 
     if (selectedCollection == "Default") {
-        note = mainCollection->GetNote(selectedTitle);
+        note = mainCollection.GetNote(selectedTitle);
     } else if(selectedCollection == "Important"){
-        note = importantCollection->GetNote(selectedTitle);
+        note = importantCollection.GetNote(selectedTitle);
     }
     else{
         for (int i = 0; i < collections.size(); ++i) {
@@ -243,14 +233,14 @@ void MainFrame::UpdateNoteList(const std::string &collectionName) {
     noteList->Clear();
 
     if (collectionName == "Default") {
-        const auto& notes = mainCollection->GetNotes();
+        const auto& notes = mainCollection.GetNotes();
         for (const auto& note : notes)
             noteList->Append(note->GetTitle());
         return;
     }
 
     if (collectionName == "Important") {
-        const auto& notes = importantCollection->GetNotes();
+        const auto& notes = importantCollection.GetNotes();
         for (const auto& note : notes)
             noteList->Append(note->GetTitle());
         return;
@@ -271,8 +261,8 @@ void MainFrame::OnClose(wxCloseEvent& event)
     //Combine all collection to one vector
     std::vector<Collection> allCollections;
 
-    allCollections.push_back(*mainCollection);
-    allCollections.push_back(*importantCollection);
+    allCollections.push_back(mainCollection);
+    allCollections.push_back(importantCollection);
 
     for (auto& c : collections)
         allCollections.push_back(c);
@@ -282,4 +272,26 @@ void MainFrame::OnClose(wxCloseEvent& event)
     event.Skip();
 }
 
+bool MainFrame::ExtractSpecials(std::vector<Collection>& collVector) {
+    int count = 0;
+    for (auto it = collVector.begin(); it != collVector.end();) {
+        if (it->GetName() == "Default") {
+            mainCollection = *it;
+            it = collVector.erase(it);
+            count++;
+        }
+        else if (it->GetName() == "Important") {
+            importantCollection = *it;
+            it = collVector.erase(it);
+            count++;
+        }
+        else ++it;
+    }
+   return count > 0;
+}
 
+void MainFrame::PopulateComboBox() {
+    for (const auto& coll : collections)
+        collectionCombo->Append(coll.GetName());
+
+}

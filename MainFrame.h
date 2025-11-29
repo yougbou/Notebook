@@ -14,8 +14,8 @@
 
 class MainFrame : public wxFrame {
 private:
-    Collection *mainCollection;
-    Collection *importantCollection;
+    Collection mainCollection;
+    Collection importantCollection;
     std::vector<Collection> collections;
     CollectionObserver observerMain;
     CollectionObserver observerImportant;
@@ -44,6 +44,8 @@ public:
     void OnCollectionSelected(wxCommandEvent&);
 
     void UpdateNoteList(const std::string& collectionName);
+    bool ExtractSpecials(std::vector<Collection>& collections);
+    void PopulateComboBox();
 
 };
 

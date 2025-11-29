@@ -21,7 +21,7 @@ private:
 
 public:
     explicit Collection(const std::string& n) : name(n) {}
-
+    Collection() = default;
     //deep copy
     Collection& operator=(const Collection& other);
 
@@ -33,6 +33,10 @@ public:
 
     const std::vector<std::shared_ptr<Note>>& GetNotes() const {
         return notes;
+    }
+
+    void SetName(const std::string& n) {
+        name = n;
     }
     const std::string& GetName() const {
         return name;
